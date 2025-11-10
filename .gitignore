@@ -2,3 +2,18 @@
 .ruff_cache
 .mypy_cache
 .venv
+
+
+
+# Local Playwright browsers
+.pw-browsers/
+# Python venv
+.venv/
+# Bytecode
+__pycache__/
+
+
+.pw-browsers/
+.venv/
+logs/
+__pycache__/
