@@ -19,7 +19,7 @@ A tiny Windows-friendly tool to update device admin credentials across many IPs 
 2. In **PowerShell** (or Command Prompt), from the project root:
 
    ```powershell
-   py -m venv .venv
+   python -m venv .venv
    .\.venv\Scripts\activate
    pip install -r requirements.txt
    python -m playwright install chromium
