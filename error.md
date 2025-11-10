@@ -38,3 +38,20 @@ Error: Download failure, code=1
     at ChildProcess.<anonymous> (C:\Dev\flora_auth\.venv\Lib\site-packages\playwright\driver\package\lib\server\registry\browserFetcher.js:91:16)
     at ChildProcess.emit (node:events:519:28)
     at ChildProcess._handle.onexit (node:internal/child_process:294:12)
+
+
+# 1) Temporarily allow Node to accept your corp MITM cert
+
+$env:NODE_TLS_REJECT_UNAUTHORIZED = "0"
+
+# 2) Keep browsers in-repo (your preference)
+
+$env:PLAYWRIGHT_BROWSERS_PATH = "$PWD\.pw-browsers"
+
+# 3) Install Chromium
+
+python -m playwright install chromium
+
+# 4) (Important) Remove the insecure override for the rest of your session
+
+Remove-Item Env:\NODE_TLS_REJECT_UNAUTHORIZED
